@@ -1,11 +1,39 @@
 ---
 import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
+
+const profile = {
+  name: "alva-yky",
+  country: "china",
+  skills: ["html", "css", "javascript", "vue", "react", "astro"],
+};
+
+const skillColor = 'blue';
+const fontWeight = 'bold';
+const textCase = 'uppercase';
 ---
 
 <Layout title="ALVA-YKY'S ABOUT">
   <Nav />
   <h1>关于</h1>
+  <p>My name is {profile.name}, I live in {profile.country}!</p>
+  <p>My skills are:</p>
+  <ul>
+    {profile.skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+  <Footer />
 </Layout>
 
-<style></style>
+<style define:vars={{skillColor, fontWeight, textCase}}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
+
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+</style>

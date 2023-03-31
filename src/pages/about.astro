@@ -1,5 +1,5 @@
 ---
-import Nav from "../components/Nav.astro";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -15,7 +15,7 @@ const textCase = 'uppercase';
 ---
 
 <Layout title="ALVA-YKY'S ABOUT">
-  <Nav />
+  <Header active={3} />
   <h1>关于</h1>
   <p>My name is {profile.name}, I live in {profile.country}!</p>
   <p>My skills are:</p>
